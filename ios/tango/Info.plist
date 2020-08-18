@@ -71,6 +71,12 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>sf-display-bold.otf</string>
+		<string>sf-display-regular.otf</string>
+		<string>sf-display-semibold.otf</string>
+		<string>sf-text-Bold.ttf</string>
+		<string>sf-text-Regular.ttf</string>
+		<string>sf-text-Semibold.ttf</string>
 	</array>
 </dict>
 </plist>
