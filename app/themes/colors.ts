@@ -7,7 +7,8 @@ const Colors: ColorsType = {
     "#5C4DF7",
     "#3F4164",
   ),
-  icon: "#6385E6",
+  icon: "#6B6D93",
+  activeIcon: "#6385E6",
   txt: new Color(
     /* \n */
     "white",

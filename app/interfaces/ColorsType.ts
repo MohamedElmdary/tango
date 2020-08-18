@@ -1,13 +1,21 @@
 import { Gradient } from "./gradient";
 
-class Color {
+class Color<T> {
   constructor(
-    public main: string | Gradient,
+    /* \n */
+    public primary: T,
     public accent: string,
     public warn: string,
   ) {}
 }
 
-export type ColorsType = { [key: string]: string | Gradient | Color };
+export type ColorsType = {
+  bg: Color<Gradient>;
+  icon: string;
+  activeIcon: string;
+  txt: Color<string>;
+  green: string;
+  red: string;
+};
 
 export { Color };
