@@ -15,6 +15,8 @@ const Placeholder = () => <Text>Placeholder</Text>;
 const BottomTabNavigator = createMaterialTopTabNavigator();
 
 const BottomTab: React.FC = () => {
+  const iconSize = 25;
+
   return (
     <BottomTabNavigator.Navigator
       backBehavior="history"
@@ -40,7 +42,7 @@ const BottomTab: React.FC = () => {
             return (
               <MaterialIcon
                 name="chat-bubble"
-                size={28}
+                size={iconSize}
                 color={focused ? Colors.activeIcon : Colors.icon}
               />
             );
@@ -55,7 +57,7 @@ const BottomTab: React.FC = () => {
             return (
               <MaterialIcon
                 name="phone"
-                size={28}
+                size={iconSize}
                 color={focused ? Colors.activeIcon : Colors.icon}
               />
             );
@@ -70,7 +72,7 @@ const BottomTab: React.FC = () => {
             return (
               <MaterialIcon
                 name="camera-alt"
-                size={28}
+                size={iconSize}
                 color={focused ? Colors.activeIcon : Colors.icon}
               />
             );
@@ -85,7 +87,7 @@ const BottomTab: React.FC = () => {
             return (
               <EntypoIcon
                 name="users"
-                size={28}
+                size={iconSize}
                 color={focused ? Colors.activeIcon : Colors.icon}
               />
             );
@@ -100,7 +102,7 @@ const BottomTab: React.FC = () => {
             return (
               <EntypoIcon
                 name="user"
-                size={28}
+                size={iconSize}
                 color={focused ? Colors.activeIcon : Colors.icon}
               />
             );
