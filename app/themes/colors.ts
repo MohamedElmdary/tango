@@ -2,8 +2,12 @@ import { ColorsType, Gradient, Color } from "../interfaces";
 
 const Colors: ColorsType = {
   bg: new Color(
-    /* \n */
-    new Gradient(["#21223D", "#464765"]),
+    new Gradient(
+      /* \n */
+      ["#21223D", "#464765"],
+      { x: 1, y: -1 },
+      { x: 2, y: 0.9 },
+    ),
     "#5C4DF7",
     "#3F4164",
   ),
