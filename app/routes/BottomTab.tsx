@@ -9,6 +9,7 @@ import { Colors } from "../themes";
 import ChatScreen from "../screens/ChatScreen";
 import CallScreen from "../screens/CallScreen";
 import StoryScreen from "../screens/StoryScreen";
+import ContactScreen from "../screens/ContactScreen";
 
 /* temp */
 import { Text } from "react-native";
@@ -23,7 +24,7 @@ const BottomTab: React.FC = () => {
     <BottomTabNavigator.Navigator
       backBehavior="history"
       tabBarPosition="bottom"
-      initialRouteName="Story"
+      initialRouteName="Contact"
       tabBarOptions={{
         pressColor: Colors.txt.primary,
         showIcon: true,
@@ -84,7 +85,7 @@ const BottomTab: React.FC = () => {
       />
       <BottomTabNavigator.Screen
         name="Contact"
-        component={Placeholder}
+        component={ContactScreen}
         options={{
           tabBarIcon({ focused }) {
             return (

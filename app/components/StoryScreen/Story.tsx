@@ -16,7 +16,9 @@ const Story: React.FC<Props> = ({ story }) => {
         <Image source={story.image} style={styles.image} />
         <View>
           <Text style={styles.name}>{story.name}</Text>
-          <Text style={styles.date}>{story.fromTime}</Text>
+          <Text style={styles.date} numberOfLines={1}>
+            {story.fromTime}
+          </Text>
         </View>
       </TouchableNativeFeedback>
     </View>
