@@ -10,13 +10,9 @@ import ChatScreen from "../screens/ChatScreen";
 import CallScreen from "../screens/CallScreen";
 import StoryScreen from "../screens/StoryScreen";
 import ContactScreen from "../screens/ContactScreen";
-
-/* temp */
-import { Text } from "react-native";
-const Placeholder = () => <Text>Placeholder</Text>;
+import SettingScreen from "../screens/SettingScreen";
 
 const BottomTabNavigator = createMaterialTopTabNavigator();
-
 const BottomTab: React.FC = () => {
   const iconSize = 25;
 
@@ -24,7 +20,7 @@ const BottomTab: React.FC = () => {
     <BottomTabNavigator.Navigator
       backBehavior="history"
       tabBarPosition="bottom"
-      initialRouteName="Contact"
+      initialRouteName="Profile"
       tabBarOptions={{
         pressColor: Colors.txt.primary,
         showIcon: true,
@@ -100,7 +96,7 @@ const BottomTab: React.FC = () => {
       />
       <BottomTabNavigator.Screen
         name="Profile"
-        component={Placeholder}
+        component={SettingScreen}
         options={{
           tabBarIcon({ focused }) {
             return (
