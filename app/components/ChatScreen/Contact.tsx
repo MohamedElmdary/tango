@@ -1,55 +1,79 @@
 import React from "react";
-import { View, Image, Text, StyleSheet } from "react-native";
+import {
+  View,
+  Image,
+  Text,
+  StyleSheet,
+  GestureResponderEvent,
+} from "react-native";
+import { TouchableNativeFeedback } from "react-native-gesture-handler";
 
 import { Fonts, Colors } from "../../themes";
 import { ContactModal } from "../../interfaces/contactModal";
 
 interface Props {
   contact: ContactModal;
+  onPress?(e: GestureResponderEvent): void;
 }
 
-const Contact: React.FC<Props> = ({ contact }) => {
+const Contact: React.FC<Props> = ({ contact, onPress = () => null }) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image source={contact.image} style={styles.image} />
-        <View
-          style={[
-            styles.status,
-            { backgroundColor: contact.online ? Colors.green : Colors.red },
-          ]}
-        />
-      </View>
-      <View style={styles.infoContainer}>
-        <View style={{ alignSelf: "center" }}>
-          <Text style={styles.name}>
-            {/* \n */}
-            {contact.name}
-          </Text>
-          <Text style={styles.message} numberOfLines={1}>
-            {contact.message}
-          </Text>
-        </View>
-        <View style={styles.dateContainer}>
-          <View
-            style={[
-              styles.messageNo,
-              {
-                backgroundColor: contact.messageNo
-                  ? Colors.bg.accent
-                  : undefined,
-              },
-            ]}>
-            {contact.messageNo ? (
-              <Text style={styles.messageNoText}>{contact.messageNo}</Text>
-            ) : null}
+    <View style={{ marginBottom: 15 }}>
+      <TouchableNativeFeedback onPress={onPress}>
+        <View style={styles.container}>
+          <View style={styles.imageContainer}>
+            <Image source={contact.image} style={styles.image} />
+            <View
+              style={[
+                styles.status,
+                { backgroundColor: contact.online ? Colors.green : Colors.red },
+              ]}
+            />
           </View>
-          <Text style={[styles.message, { fontSize: 10 }]}>
-            {/* \n */}
-            {contact.time}
-          </Text>
+          <View style={styles.infoContainer}>
+            <View style={{ alignSelf: "center" }}>
+              <Text style={styles.name}>
+                {/* \n */}
+                {contact.name}
+              </Text>
+              <Text
+                style={[
+                  styles.message,
+                  {
+                    fontFamily: contact.messageNo
+                      ? Fonts.textSemibold
+                      : Fonts.textRegular,
+                    color: contact.messageNo
+                      ? Colors.txt.warn
+                      : Colors.txt.accent,
+                  },
+                ]}
+                numberOfLines={1}>
+                {contact.message}
+              </Text>
+            </View>
+            <View style={styles.dateContainer}>
+              <View
+                style={[
+                  styles.messageNo,
+                  {
+                    backgroundColor: contact.messageNo
+                      ? Colors.bg.accent
+                      : undefined,
+                  },
+                ]}>
+                {contact.messageNo ? (
+                  <Text style={styles.messageNoText}>{contact.messageNo}</Text>
+                ) : null}
+              </View>
+              <Text style={[styles.message, { fontSize: 10 }]}>
+                {/* \n */}
+                {contact.time}
+              </Text>
+            </View>
+          </View>
         </View>
-      </View>
+      </TouchableNativeFeedback>
     </View>
   );
 };
@@ -58,7 +82,6 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "row",
-    marginBottom: 15,
   },
   imageContainer: {
     marginRight: 20,

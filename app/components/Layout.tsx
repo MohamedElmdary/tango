@@ -20,7 +20,6 @@ const Layout: React.FC = ({ children }) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 20,
     height: "100%",
     width: "100%",
   },

@@ -1,15 +1,23 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { FlatList } from "react-native-gesture-handler";
 
 import Layout from "../components/Layout";
+import { contacts } from "../store";
 import Contact from "../components/ChatScreen/Contact";
 
 const ChatScreen: React.FC = () => {
   return (
     <Layout>
-      <View>
-        <Text>chat screen</Text>
-      </View>
+      <FlatList
+        contentContainerStyle={{
+          paddingHorizontal: 20,
+        }}
+        data={contacts}
+        renderItem={({ item }) => {
+          return <Contact contact={item} key={item.id} />;
+        }}
+        keyExtractor={({ id }) => id.toString()}
+      />
     </Layout>
   );
 };

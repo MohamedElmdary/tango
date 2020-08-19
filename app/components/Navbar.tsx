@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginVertical: 35,
+    paddingHorizontal: 20,
   },
   title: {
     fontFamily: Fonts.textSemibold,
