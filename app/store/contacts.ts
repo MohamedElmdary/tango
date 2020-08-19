@@ -1,10 +1,10 @@
-import { ContactModal } from "../interfaces/contactModal";
+import { ContactModel } from "../interfaces/contactModel";
 
-const contacts: ContactModal[] = [];
+const contacts: ContactModel[] = [];
 
 for (let i = 0; i < 40; i++) {
   contacts.push(
-    new ContactModal(
+    new ContactModel(
       i,
       "Eugene Hanson " + i,
       "Hey! How are you?",

@@ -1,4 +1,4 @@
-class ContactModal {
+class ContactModel {
   constructor(
     public id: number,
     public name: string,
@@ -10,4 +10,4 @@ class ContactModal {
   ) {}
 }
 
-export { ContactModal };
+export { ContactModel };
