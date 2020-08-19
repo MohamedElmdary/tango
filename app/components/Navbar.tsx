@@ -5,13 +5,17 @@ import MaterialIcon from "react-native-vector-icons/MaterialIcons";
 import { Colors, Fonts } from "../themes";
 import IconButton from "./IconButton";
 
-const Navbar: React.FC = () => {
+interface Props {
+  title: string;
+}
+
+const Navbar: React.FC<Props> = ({ title }) => {
   return (
     <View style={styles.container}>
       <IconButton>
         <MaterialIcon name="menu" size={20} color={Colors.txt.primary} />
       </IconButton>
-      <Text style={styles.title}>Message</Text>
+      <Text style={styles.title}>{title}</Text>
       <IconButton>
         <MaterialIcon name="search" size={20} color={Colors.txt.primary} />
       </IconButton>

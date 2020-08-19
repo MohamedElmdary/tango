@@ -11,7 +11,7 @@ import { Colors } from "../themes";
 
 const ChatScreen: React.FC = () => {
   return (
-    <Layout>
+    <Layout title="Chat">
       <View style={styles.flootBtn}>
         <IconButton iconButtonRadius={50} background={Colors.bg.accent}>
           <FeatherIcon name="plus" size={34} color={Colors.txt.primary} />

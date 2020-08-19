@@ -5,12 +5,16 @@ import LinearGradient from "react-native-linear-gradient";
 import { Colors } from "../themes";
 import Navbar from "./Navbar";
 
-const Layout: React.FC = ({ children }) => {
+interface Props {
+  title: string;
+}
+
+const Layout: React.FC<Props> = ({ children, title }) => {
   return (
     <SafeAreaView>
       <LinearGradient {...Colors.bg.primary}>
         <View style={styles.container}>
-          <Navbar />
+          <Navbar title={title} />
           {children}
         </View>
       </LinearGradient>
