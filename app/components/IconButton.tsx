@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, View, GestureResponderEvent } from "react-native";
+import { StyleSheet, View, GestureResponderEvent } from "react-native";
 import { TouchableNativeFeedback } from "react-native-gesture-handler";
 
 import { Colors } from "../themes";
@@ -7,12 +7,14 @@ import { Colors } from "../themes";
 interface Props {
   iconButtonRadius?: number;
   onPress?(e: GestureResponderEvent): void;
+  background?: string;
 }
 
 const IconButton: React.FC<Props> = ({
   iconButtonRadius = 30,
   children,
   onPress = () => null,
+  background,
 }) => {
   const btnStyles = [
     styles.btn,
@@ -24,7 +26,7 @@ const IconButton: React.FC<Props> = ({
   ];
 
   return (
-    <View style={btnStyles}>
+    <View style={[btnStyles, { backgroundColor: background }]}>
       <TouchableNativeFeedback
         onPress={onPress}
         style={btnStyles}
