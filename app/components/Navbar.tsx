@@ -7,18 +7,28 @@ import IconButton from "./IconButton";
 
 interface Props {
   title: string;
+  leftICon?: JSX.Element;
+  rightIcon?: JSX.Element;
+  showRightIcon?: boolean;
 }
 
-const Navbar: React.FC<Props> = ({ title }) => {
+const Navbar: React.FC<Props> = ({
+  title,
+  leftICon = <MaterialIcon name="menu" size={20} color={Colors.txt.primary} />,
+  rightIcon = (
+    <MaterialIcon name="search" size={20} color={Colors.txt.primary} />
+  ),
+  showRightIcon = true,
+}) => {
   return (
     <View style={styles.container}>
-      <IconButton>
-        <MaterialIcon name="menu" size={20} color={Colors.txt.primary} />
-      </IconButton>
+      <IconButton>{leftICon}</IconButton>
       <Text style={styles.title}>{title}</Text>
-      <IconButton>
-        <MaterialIcon name="search" size={20} color={Colors.txt.primary} />
-      </IconButton>
+      {showRightIcon ? (
+        <IconButton>{rightIcon}</IconButton>
+      ) : (
+        <View style={{ width: 30 }} />
+      )}
     </View>
   );
 };
