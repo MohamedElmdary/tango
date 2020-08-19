@@ -21,6 +21,7 @@ const Colors: ColorsType = {
   ),
   green: "#11B753",
   red: "#CC0015",
+  divider: "#4B5063",
 };
 
 export { Colors };

@@ -2,7 +2,7 @@ import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import MaterialIcon from "react-native-vector-icons/MaterialIcons";
 
-import { Colors } from "../themes";
+import { Colors, Fonts } from "../themes";
 import IconButton from "./IconButton";
 
 const Navbar: React.FC = () => {
@@ -11,14 +11,7 @@ const Navbar: React.FC = () => {
       <IconButton>
         <MaterialIcon name="menu" size={20} color={Colors.txt.primary} />
       </IconButton>
-      <Text
-        style={{
-          // fontFamily: ''
-          fontSize: 24,
-          color: Colors.txt.primary,
-        }}>
-        Message
-      </Text>
+      <Text style={styles.title}>Message</Text>
       <IconButton>
         <MaterialIcon name="search" size={20} color={Colors.txt.primary} />
       </IconButton>
@@ -31,7 +24,13 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "space-between",
     flexDirection: "row",
+    alignItems: "center",
     marginVertical: 35,
+  },
+  title: {
+    fontFamily: Fonts.textSemibold,
+    fontSize: 24,
+    color: Colors.txt.primary,
   },
 });
 

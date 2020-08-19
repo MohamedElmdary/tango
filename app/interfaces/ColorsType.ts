@@ -16,6 +16,7 @@ export type ColorsType = {
   txt: Color<string>;
   green: string;
   red: string;
+  divider: string;
 };
 
 export { Color };
