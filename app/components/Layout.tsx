@@ -10,14 +10,19 @@ interface Props {
   leftICon?: JSX.Element;
   rightIcon?: JSX.Element;
   showRightIcon?: boolean;
+  hideNavbar?: boolean;
 }
 
-const Layout: React.FC<Props> = ({ children, ...navbarProps }) => {
+const Layout: React.FC<Props> = ({
+  children,
+  hideNavbar = false,
+  ...navbarProps
+}) => {
   return (
     <SafeAreaView>
       <LinearGradient {...Colors.bg.primary}>
         <View style={styles.container}>
-          <Navbar {...navbarProps} />
+          {hideNavbar ? null : <Navbar {...navbarProps} />}
           {children}
         </View>
       </LinearGradient>
