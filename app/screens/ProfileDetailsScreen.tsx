@@ -45,27 +45,15 @@ const ProfileDetailsScreen: React.FC = () => {
           </View>
           <View style={styles.mobileActions}>
             <IconButton iconButtonRadius={28} background={Colors.bg.accent}>
-              <MaterialIcon
-                name="keyboard-arrow-right"
-                size={25}
-                color="white"
-              />
+              <MaterialIcon name="videocam" size={17} color="white" />
             </IconButton>
             <View style={{ marginHorizontal: 10 }}>
               <IconButton iconButtonRadius={28} background={Colors.bg.accent}>
-                <MaterialIcon
-                  name="keyboard-arrow-right"
-                  size={25}
-                  color="white"
-                />
+                <MaterialIcon name="phone" size={17} color="white" />
               </IconButton>
             </View>
             <IconButton iconButtonRadius={28} background={Colors.bg.accent}>
-              <MaterialIcon
-                name="keyboard-arrow-right"
-                size={25}
-                color="white"
-              />
+              <MaterialIcon name="message" size={17} color="white" />
             </IconButton>
           </View>
         </View>
