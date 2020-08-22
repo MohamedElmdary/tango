@@ -4,13 +4,14 @@ import { createStackNavigator } from "@react-navigation/stack";
 import BottomTab from "./BottomTab";
 import CallingScreen from "../screens/CallingScreen";
 import ProfileDetailsScreen from "../screens/ProfileDetailsScreen";
+import ChatScreen from "../screens/ChatScreen";
 
 const StackNavigator = createStackNavigator();
 
 const Stack: React.FC = () => {
   return (
     <StackNavigator.Navigator
-      initialRouteName="ProfileDetails"
+      initialRouteName="ChatScreen"
       screenOptions={{
         headerShown: false,
       }}>
@@ -20,6 +21,7 @@ const Stack: React.FC = () => {
         name="ProfileDetails"
         component={ProfileDetailsScreen}
       />
+      <StackNavigator.Screen name="ChatScreen" component={ChatScreen} />
     </StackNavigator.Navigator>
   );
 };
