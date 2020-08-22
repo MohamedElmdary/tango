@@ -5,11 +5,11 @@ import FeatherIcon from "react-native-vector-icons/Feather";
 
 import Layout from "../components/Layout";
 import { contacts } from "../store";
-import Contact from "../components/ChatScreen/Contact";
+import Contact from "../components/MessageScreen/Contact";
 import IconButton from "../components/IconButton";
 import { Colors } from "../themes";
 
-const ChatScreen: React.FC = () => {
+const MessageScreen: React.FC = () => {
   return (
     <Layout title="Chat">
       <View style={styles.flootBtn}>
@@ -40,4 +40,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ChatScreen;
+export default MessageScreen;

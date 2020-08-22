@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import MaterialIcon from "react-native-vector-icons/MaterialIcons";
-import { ScrollView } from "react-native-gesture-handler";
+import { FlatList } from "react-native-gesture-handler";
 
 import ParallaxLayout from "../components/ParallaxLayout";
 import { Colors, Fonts } from "../themes";
@@ -31,11 +31,15 @@ const ProfileDetailsScreen: React.FC = () => {
             </IconButton>
           </View>
           <View style={styles.scrollContainer}>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-              {images.map((img, idx) => (
-                <Image style={styles.mediaImg} source={img} key={idx} />
-              ))}
-            </ScrollView>
+            <FlatList
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+              data={images}
+              renderItem={({ item }) => (
+                <Image style={styles.mediaImg} source={item} />
+              )}
+              keyExtractor={({ uri }) => uri}
+            />
           </View>
         </View>
         <View style={styles.mobileContainer}>

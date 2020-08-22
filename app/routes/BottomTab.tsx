@@ -6,7 +6,7 @@ import EntypoIcon from "react-native-vector-icons/Entypo";
 import { Colors } from "../themes";
 
 /* screens */
-import ChatScreen from "../screens/ChatScreen";
+import MessageScreen from "../screens/MessageScreen";
 import CallScreen from "../screens/CallScreen";
 import StoryScreen from "../screens/StoryScreen";
 import ContactScreen from "../screens/ContactScreen";
@@ -20,7 +20,7 @@ const BottomTab: React.FC = () => {
     <BottomTabNavigator.Navigator
       backBehavior="history"
       tabBarPosition="bottom"
-      initialRouteName="Profile"
+      initialRouteName="Chat"
       tabBarOptions={{
         pressColor: Colors.txt.primary,
         showIcon: true,
@@ -36,7 +36,7 @@ const BottomTab: React.FC = () => {
       }}>
       <BottomTabNavigator.Screen
         name="Chat"
-        component={ChatScreen}
+        component={MessageScreen}
         options={{
           tabBarIcon({ focused }) {
             return (

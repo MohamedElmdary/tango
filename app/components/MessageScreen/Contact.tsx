@@ -9,10 +9,10 @@ import {
 import { TouchableNativeFeedback } from "react-native-gesture-handler";
 
 import { Fonts, Colors } from "../../themes";
-import { ContactModal } from "../../interfaces/contactModal";
+import { ContactModel } from "../../interfaces";
 
 interface Props {
-  contact: ContactModal;
+  contact: ContactModel;
   onPress?(e: GestureResponderEvent): void;
 }
 
