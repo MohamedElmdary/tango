@@ -1,5 +1,4 @@
 import React from "react";
-import { StackScreenProps } from "@react-navigation/stack";
 import { View, StyleSheet, Dimensions } from "react-native";
 import SimpleLineIcon from "react-native-vector-icons/SimpleLineIcons";
 import MaterialIcon from "react-native-vector-icons/MaterialIcons";
@@ -8,10 +7,11 @@ import { TextInput } from "react-native-gesture-handler";
 
 import IconButton from "../../components/IconButton";
 import { Colors, Fonts } from "../../themes";
+import { useNavigation, StackActions } from "@react-navigation/native";
 
-interface Props extends StackScreenProps<any> {}
+const ChatBottombar: React.FC = (props) => {
+  const navigation = useNavigation();
 
-const ChatBottombar: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.subContainer}>
@@ -41,7 +41,7 @@ const ChatBottombar: React.FC<Props> = ({ navigation }) => {
       <IconButton
         iconButtonRadius={35}
         onPress={() => {
-          navigation.push("Camera");
+          navigation.dispatch(StackActions.push("Camera"));
         }}>
         <MaterialIcon name="camera-alt" size={25} color={Colors.txt.accent} />
       </IconButton>
