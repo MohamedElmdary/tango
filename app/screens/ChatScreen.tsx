@@ -1,4 +1,4 @@
-import React, { useRef /* , useState, useEffect */ } from "react";
+import React, { useRef, useEffect /* , useState */ } from "react";
 import { StyleSheet } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 
@@ -13,7 +13,7 @@ const ChatScreen: React.FC = () => {
   // const [endReached, setEndReached] = useState<boolean>(true);
   const messageRef = useRef<FlatList<MessageModel>>(null);
 
-  let cls: any;
+  // let cls: any;
 
   return (
     <Layout hideNavbar title="">
